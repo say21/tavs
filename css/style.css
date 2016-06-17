@@ -11,6 +11,10 @@ body {
 	background-color: #b0c4de;
 }
 
+header, footer, nav, section, article {
+    clear: both;
+}
+
 h1 { 
 	color: #111;
 	font-family: 'Atma', cursive;
@@ -21,6 +25,10 @@ h1 {
 	text-align: center;
 }
 
+article > header > h1 {
+    padding: 0.5em;
+    font-size: 120px;
+}
 
 h2 { 
 	color: #111;
@@ -168,5 +176,4 @@ header {
 
 footer {
     padding: 5%;
-    clear: both;
 }
