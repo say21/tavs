@@ -6,9 +6,12 @@
 		
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/social.css">
+		<link rel="stylesheet" href="css/nav.css">
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atma" >
 		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+		<script src="js/modernizr.custom.js"></script>
 	</head>
 
 
@@ -17,69 +20,37 @@
 			<h1><img id="logo" src="image/logo.jpg" alt="logo" />TaVS</h1>
 			<h2>Tamilischer Verein der Studenten</h2>
 		</header>
-		<nav>
-			<ul class="ca-menu">
+
+		<nav  id="menu" class="nav">
+			<ul>
 				<li>
-					<a href="index.html">
-						<span class="ca-icon">
-							<i class="fa fa-home"></i>
-						</span>
-						<div class="ca-content">
-							<h2 class="ca-main">Home</h2>
-							<h3 class="ca-sub">Go to Mainpage</h3>
-						</div>
-					</a>
-				</li>		
-				<li>
-					<a href="about.html">
-						<span class="ca-icon">
-							<i class="fa fa-user"></i>
-						</span>
-						<div class="ca-content">
-							<h2 class="ca-main">About us</h2>
-							<h3 class="ca-sub">Informations</h3>
-						</div>
+					<a  href="index.html" title="">
+						<span  class="icon"><i class="fa fa-home"></i></span><span>Home</span>
 					</a>
 				</li>
 				<li>
-					<a href="projects.html">
-						<span class="ca-icon">
-							<i class="fa fa-lightbulb-o"></i>
-						</span>
-						<div class="ca-content">
-							<h2 class="ca-main">Projects</h2>
-							<h3 class="ca-sub">Our Projects</h3>
-						</div>
-					</a>
-				</li>		
+					<a href="about.html" title=""><span class="icon"> <i class="fa fa-user"></i></span><span>About us</span></a>
+				</li>
 				<li>
-					<a href="images.html">
-						<span class="ca-icon">
-							<i class="fa fa-image"></i>
-						</span>
-						<div class="ca-content">
-							<h2 class="ca-main">Photos</h2>
-							<h3 class="ca-sub">Some Photos</h3>
-						</div>
-					</a>
-				</li>	
+					<a  href="#" title=""><span  class="icon"><i class="fa fa-lightbulb-o"></i></span><span>Projects</span></a>
+				</li>
 				<li>
-					<a href="contact.html">
-						<span class="ca-icon">
-							<i class="fa fa-envelope"></i>
-						</span>
-						<div class="ca-content">
-							<h2 class="ca-main">Contact</h2>
-							<h3 class="ca-sub">Get contact</h3>
-						</div>
-					</a>
-				</li>					
+					<a  href="#" title=""><span  class="icon">	<i class="fa fa-envelope"></i></span><span>Contact</span></a>
+				</li>
 			</ul>
 		</nav>
 
 		<main>
 			<section>
-
+				<p>
+					<b>Who are we?</b>
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+					labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+					et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+					labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+					et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+				</p>
 			</section>
 		</main>
 
@@ -89,5 +60,38 @@
 						class="sb circle facebook">Facebook</a>
 			</div>
 		</footer>
+
+		<script>
+			//  The function to change the class
+			var changeClass = function (r,className1,className2) {
+				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+				if( regex.test(r.className) ) {
+					r.className = r.className.replace(regex,' '+className2+' ');
+				}
+				else{
+					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+				}
+				return r.className;
+			};
+
+			//  Creating our button in JS for smaller screens
+			var menuElements = document.getElementById('menu');
+			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+			//  Toggle the class on click to show / hide the menu
+			document.getElementById('menutoggle').onclick = function() {
+				changeClass(this, 'navtoogle active', 'navtoogle');
+			}
+
+			// http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
+			document.onclick = function(e) {
+				var mobileButton = document.getElementById('menutoggle'),
+						buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+				}
+			}
+		</script>
 	</body>
 </html>
