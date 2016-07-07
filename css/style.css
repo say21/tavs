@@ -37,8 +37,8 @@ h2 {
 	font-family: 'Atma', cursive;
 	font-size: 30px; 
 	font-weight: 300; 
-	line-height: 32px; 
-	margin: 0 0 72px; 
+	line-height: 32px;
+	margin-top: 1rem;
 	text-align: center; 
 }
 
@@ -50,13 +50,147 @@ h2 {
 
 header {
     margin-top: 5%;
+	margin-bottom: 5%;
 }
 
 nav#menu {
     margin-left: 25%;
 }
 
-footer {
-    padding: 5%;
+section {
+	padding: 5%;
 }
 
+div {
+	padding: 2%;
+}
+
+.image-left {
+	float: left;
+}
+
+.image-right {
+	float: right;
+}
+
+p {
+	font-size: x-large;
+	text-align: center;
+}
+
+.footer{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+	padding: 45px 50px;
+	margin-top: 80px;
+}
+
+.footer-image {
+	float: left;
+	opacity: 0.5;
+}
+
+.footer-image > img {
+	border-radius: 25px;
+}
+
+.footer .footer-left p{
+	color:  #8f9296;
+	font-size: 14px;
+	margin: 0;
+}
+
+/* Footer links */
+
+.footer p.footer-links{
+	font-size:18px;
+	font-weight: bold;
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.footer p.footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer .footer-right{
+	float: right;
+	margin-top: 6px;
+	max-width: 150px;
+}
+
+.footer .footer-right a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-left: 3px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 600px) {
+
+	.footer .footer-left,
+	.footer .footer-right{
+		text-align: center;
+	}
+
+	.footer .footer-right{
+		float: none;
+		margin: 0 auto 20px;
+	}
+
+	.footer .footer-left p.footer-links{
+		line-height: 1.8;
+	}
+}
+
+
+/************
+*	button
+*************/
+.btn {
+	cursor: pointer;
+	margin: 10px;
+	margin-left: 25%;
+	margin-top: 5%;
+	border-radius: 5px;
+	text-decoration: none;
+	padding: 10px;
+	font-size: 22px;
+	transition: .3s;
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-o-transition: .3s;
+	display: inline-block;
+}
+
+.btn:hover {
+	cursor: url(http://cur.cursors-4u.net/symbols/sym-1/sym46.cur), auto;
+}
+
+.orangered {
+	color: orangered;
+	border: 2px orangered solid;
+}
+
+.orangered:hover {
+	color: #fff;
+	background-color: orangered;
+}

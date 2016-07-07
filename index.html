@@ -42,56 +42,70 @@
 
 		<main>
 			<section>
-				<p>
-					<b>Who are we?</b>
-					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-					labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-					et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-					labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-					et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-				</p>
+				<article>
+					<div class="image-left">
+						<image src="image/how.jpeg" alt="How are we?" />
+					</div>
+					<div>
+						<h2><b>Who are we?</b></h2>
+						<p>
+							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+							labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+							et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+							labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+							et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+						</p>
+						<a href="about.html" class="btn orangered">More infos</a>
+					</div>
+				</article>
+				<article>
+					<div class="image-right">
+						<image src="image/actuell.jpeg" alt="actuell project" />
+					</div>
+					<div>
+						<h2><b>Our actuell Project</b></h2>
+						<p>
+							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+							labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+							et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+							labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+							et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+						</p>
+						<a href="project.html" class="btn orangered">More infos</a>
+					</div>
+
+				</article>
 			</section>
 		</main>
 
-		<footer>
-			<div class="social">
-				<a href="https://www.facebook.com/TaVS-Tamilscher-Verein-der-Studierenden-253068055070546/?ref=bookmarks" 
-						class="sb circle facebook">Facebook</a>
+		<footer class="footer">
+			<div class="footer-image">
+				<img src="image/logofooter.jpg" alt="footer logo" />
 			</div>
+
+			<div class="footer-right">
+				<a href="https://www.facebook.com/TaVS-Tamilscher-Verein-der-Studierenden-253068055070546/?ref=bookmarks"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-instagram"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-youtube-play"></i></a>
+			</div>
+
+			<div class="footer-left">
+				<p class="footer-links">
+					<a href="index.html">Home</a>
+					·
+					<a href="about.html">About us</a>
+					·
+					<a href="#">Project</a>
+					·
+					<a href="#">Contact</a>
+				</p>
+
+				<p>TaVS &copy; 2016</p>
+			</div>
+
 		</footer>
-
-		<script>
-			//  The function to change the class
-			var changeClass = function (r,className1,className2) {
-				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
-				if( regex.test(r.className) ) {
-					r.className = r.className.replace(regex,' '+className2+' ');
-				}
-				else{
-					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
-				}
-				return r.className;
-			};
-
-			//  Creating our button in JS for smaller screens
-			var menuElements = document.getElementById('menu');
-			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
-
-			//  Toggle the class on click to show / hide the menu
-			document.getElementById('menutoggle').onclick = function() {
-				changeClass(this, 'navtoogle active', 'navtoogle');
-			}
-
-			// http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
-			document.onclick = function(e) {
-				var mobileButton = document.getElementById('menutoggle'),
-						buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
-
-				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
-					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
-				}
-			}
-		</script>
 	</body>
 </html>
